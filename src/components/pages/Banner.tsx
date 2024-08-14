@@ -29,17 +29,22 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="md:flex flex-col justify-center md:w-3/4 w-11/12 my-4">
-        <p className="text-gray-500 font-semibold underline decoration-red-700 underline-offset-4 decoration-2 py-6">
-          Our Facilitators
-        </p>
+      <div className="md:flex flex-col justify-center items-center md:w-3/4 w-11/12 my-16">
+        <div className="blue-glassmorphism text-white px-6 py-3 m-8 text-center text-sm md:text-base rounded-md tracking-widest">
+          OUR FACILITATORS 
+        </div>
         <div className="grid grid-cols-3 md:grid-cols-6 justify-between items-center gap-10">
           <Image src="/ibm.png" alt="ibm cloud" width={150} height={150} />
           <Image src="/aws.png" alt="aws cloud" width={150} height={150} />
           <Image src="/azure.png" alt="azure cloud" width={150} height={150} />
           <Image src="/gcp.png" alt="gcp cloud" width={150} height={150} />
           <Image src="/splunk.png" alt="splunk" width={150} height={150} />
-          <Image src="/burpsuite.png" alt="burpsuite" width={150} height={150} />
+          <Image
+            src="/burpsuite.png"
+            alt="burpsuite"
+            width={150}
+            height={150}
+          />
         </div>
       </div>
     </div>
