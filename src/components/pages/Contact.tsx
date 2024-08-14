@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
         <div>
           <em>What happens after sending a message?</em>
           <ol className="list-decimal pl-6">
-            <li>We'll email over an introductory pack straight away.</li>
+            <li>We&apos;ll email over an introductory pack straight away.</li>
             <li>One of our representatives will be in touch within 24 hours.</li>
           </ol>
         </div>
