@@ -92,7 +92,7 @@ const Services: React.FC = () => {
                 mobile applications tailored to meet the specific needs of your
                 business. Our team leverages the latest technologies and best
                 practices to deliver solutions that not only look great but also
-                perform exceptionally well. Whether it's an e-commerce platform,
+                perform exceptionally well. Whether it&apos;s an e-commerce platform,
                 a corporate website, or a custom mobile app, we ensure a
                 seamless user experience across all devices.
               </p>
@@ -110,7 +110,7 @@ const Services: React.FC = () => {
                 and potential threats. Our systems are designed to detect and
                 prevent cyber-attacks in real-time, ensuring your business
                 remains secure. We tailor our IDPS solutions to fit your
-                organization's specific requirements, providing robust
+                organization&apos;s specific requirements, providing robust
                 protection against an evolving threat landscape.
               </p>
               <Image
