@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
         ></textarea>
         <br />
         <button
-          className="bg-black text-white py-3 px-2 ease-in-out duration-200 hover:opacity-70"
+          className="bg-black text-white py-3 px-2 ease-in-out duration-200 hover:opacity-70 rounded"
           type="submit"
         >
           Send Message

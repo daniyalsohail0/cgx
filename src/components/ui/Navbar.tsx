@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
 import { IoMenuSharp } from "react-icons/io5";
@@ -72,11 +72,11 @@ const Navbar = () => {
 
   return (
     <nav className="flex flex-col justify-center items-center sticky top-0 bg-white z-[10]">
-      <div className="md:flex hidden items-center justify-between my-10 w-3/4">
+      <div className="flex items-center justify-between my-10 md:w-3/4 w-11/12">
         <Link href="/">
-          <h1 className="text-4xl font-extrabold text-red-700">CGX</h1>
+          <h1 className="text-4xl font-extrabold text-[#FF204E]">CGX</h1>
         </Link>
-        <ul className="md:flex items-center hidden pl-4 gap-8">
+        {/* <ul className="md:flex items-center hidden pl-4 gap-8">
           <li>
             <Link href="/shop">Company</Link>
           </li>
@@ -97,9 +97,14 @@ const Navbar = () => {
               <span className="font-semibold">Get in touch</span>
             </Link>
           </li>
-        </ul>
+        </ul> */}
+        <button className="bg-black text-white duration-200 ease-in-out p-3 hover:opacity-80 font-bold rounded">
+          <Link href="/">
+            <span className="font-semibold">Get in touch</span>
+          </Link>
+        </button>
       </div>
-      <div className="flex md:hidden w-11/12 p-2 my-4 justify-between items-center relative">
+      {/* <div className="flex md:hidden w-11/12 p-2 my-4 justify-between items-center relative">
         <h1 className="text-4xl font-extrabold text-red-700 md:hidden">CGX</h1>
         {!toggleMenu && (
           <IoMenuSharp
@@ -152,7 +157,7 @@ const Navbar = () => {
             </div>
           </ul>
         )}
-      </div>
+      </div> */}
       <div className="md:w-3/4 w-full border-[0.5px] border-solid border-gray-200"></div>
     </nav>
   );

@@ -95,7 +95,7 @@ const Expertise: React.FC = () => {
         What happens when you <span className="text-[#FF204E]">reach out</span>{" "}
         to us?
       </h1>
-      <div className="flex flex-col md:flex-row justify-center items-center gap-6 w-11/12 md:w-3/4 mt-8">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-6 w-11/12 md:w-3/4 mt-8 py-8">
         <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
           <h4 className="text-xl text-[#FF204E] font-semibold mb-8">1</h4>
           <h2 className="text-lg md:text-xl font-semibold mb-4">
@@ -142,9 +142,9 @@ const Expertise: React.FC = () => {
             technological advancements and their effects on your business and
             workforce.
           </p>
-          <form className="flex bg-white p-2 m-2">
+          <form className="flex bg-white p-2 m-2 rounded">
             <input type="email" placeholder="johndoe@mail.com" className="p-2 focus:outline-none focus:ring-0 focus:border-transparent text-black" />
-            <button className="bg-black text-white p-2 hover:opacity-70 ease-in-out duration-200">Subscribe</button>
+            <button className="bg-black text-white p-2 hover:opacity-70 ease-in-out duration-200 rounded">Subscribe</button>
           </form>
         </div>
       </div>

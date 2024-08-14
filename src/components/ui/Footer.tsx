@@ -3,24 +3,24 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/f
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-8 px-4">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between">
+    <footer className="bg-slate-950 text-white py-8 px-4">
+      <div className="md:w-3/4 w-11/12 mx-auto flex flex-col md:flex-row justify-between">
         {/* Company Info */}
         <div className="mb-8 md:mb-0">
           <h2 className="text-2xl font-bold mb-4">Cyber Genesis X</h2>
           <p className="mb-4">
-            1234 Street Name, City, State, 56789
+            34 Azelea Close, Barking, IG1 2BF
           </p>
           <p className="mb-4">
-            <a href="tel:+1234567890" className="hover:underline">+1 (234) 567-890</a>
+            <a href="tel:+447467100942" className="hover:underline">+44 (7467) 100-942</a>
           </p>
           <p>
-            <a href="mailto:info@company.com" className="hover:underline">info@company.com</a>
+            <a href="mailto:team@cgx.co.uk" className="hover:underline">team@cgx.co.uk</a>
           </p>
         </div>
 
         {/* Quick Links */}
-        <div className="mb-8 md:mb-0">
+        {/* <div className="mb-8 md:mb-0">
           <h2 className="text-xl font-semibold mb-4">Quick Links</h2>
           <ul className="space-y-2">
             <li>
@@ -36,7 +36,7 @@ const Footer = () => {
               <a href="/contact" className="hover:underline">Contact</a>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* Social Media */}
         <div className="flex flex-col items-center md:items-start">

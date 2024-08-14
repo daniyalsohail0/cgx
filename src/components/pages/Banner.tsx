@@ -6,14 +6,14 @@ const Banner = () => {
     <div className="flex flex-col justify-center items-center">
       <div className="flex md:flex-row flex-col justify-between items-center md:w-3/4 h-[600px] my-5 gap-4">
         <div className="md:w-1/2 w-11/12 font-inter">
-          <h1 className="md:text-5xl text-4xl font-bold uppercase text-gray-800 tracking-wide">
+          <h1 className="md:text-5xl text-4xl w-4/5 font-bold uppercase text-gray-800 tracking-wide">
             High Assurance Custom Software Design & Development
           </h1>
           <p className="text-gray-600 my-6 md:w-3/5 w-full leading-8">
             For organizations looking to drive change, we deliver your
             technology vision.
           </p>
-          <button className="bg-black text-white py-4 px-4 my-4 text-md font-semibold hover:opacity-70 duration-200 ease-in-out">
+          <button className="bg-black text-white py-4 px-4 my-4 text-md font-semibold rounded hover:opacity-70 duration-200 ease-in-out">
             Tell us about your project
           </button>
         </div>
