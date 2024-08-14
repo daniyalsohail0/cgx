@@ -29,6 +29,8 @@ const Banner = () => {
         </div>
       </div>
 
+      <br />
+
       <div className="md:flex flex-col justify-center items-center md:w-3/4 w-11/12 my-16">
         <div className="blue-glassmorphism text-white px-6 py-3 m-8 text-center text-sm md:text-base rounded-md tracking-widest">
           OUR FACILITATORS 
