@@ -107,7 +107,7 @@ const FAQSection: React.FC = () => {
                 </span>
               </button>
               {openIndex === index && (
-                <div className="px-6 py-4 bg-white text-gray-700 transition-opacity duration-300">
+                <div className="px-6 py-4 bg-white text-gray-700 transition-opacity duration-300 text-left">
                   {faq.answer}
                 </div>
               )}
