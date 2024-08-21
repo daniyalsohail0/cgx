@@ -1,164 +1,196 @@
 "use client";
+
 import React, { useState } from "react";
-import { BiRightArrowAlt } from "react-icons/bi";
-import { IoMenuSharp } from "react-icons/io5";
-import { AiOutlineClose } from "react-icons/ai";
-import Dropdown from "./Dropdown";
-import Link from "next/link";
+import { FaCloud } from "react-icons/fa";
+import { FcAcceptDatabase, FcEngineering, FcPositiveDynamic } from "react-icons/fc";
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { MdSecurity } from "react-icons/md";
 
-const Navbar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+const Navbar: React.FC = () => {
+  const [services, setServices] = useState<boolean>(true);
+  const [technologies, setTechnologies] = useState<boolean>(false);
+  const [industry, setIndustry] = useState<boolean>(false);
+  const [company, setCompany] = useState<boolean>(false);
+  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+  const [toggleMenu, setToggleMenu] = useState<boolean>(false);
 
-  const aboutDropdown = [
-    {
-      link: "/our-team",
-      linkName: "Team",
-    },
-    {
-      link: "/mission-vision",
-      linkName: "Mission & Vision",
-    },
-    {
-      link: "/careers",
-      linkName: "Careers at EdSpare",
-    },
-  ];
+  const handleMouseEnter = (type: string) => {
+    if (type === "services") {
+      setServices(true);
+      setTechnologies(false);
+      setIndustry(false);
+      setCompany(false);
+    } else if (type === "technologies") {
+      setTechnologies(true);
+      setServices(false);
+      setIndustry(false);
+      setCompany(false);
+    } else if (type === "company") {
+      setServices(false);
+      setTechnologies(false);
+      setIndustry(false);
+      setCompany(true);
+    } else if (type === "industry") {
+      setServices(false);
+      setTechnologies(false);
+      setIndustry(true);
+      setCompany(false);
+    }
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+  };
 
-  const productDropdown = [
-    {
-      link: "/edspare-school",
-      linkName: "EdSpare School",
-    },
-    {
-      link: "/edspare-eep-sep",
-      linkName: "EdSpare EEP & SEP",
-    },
-    {
-      link: "/edspare-student",
-      linkName: "EdSpare Student",
-    },
-    {
-      link: "/our-application",
-      linkName: "Our Application",
-    },
-  ];
-
-  const servicesDropdown = [
-    {
-      link: "/ai-teaching-model",
-      linkName: "AI Based Teaching Model",
-    },
-    {
-      link: "/student-teacher-networking",
-      linkName: "Student & Teacher Network",
-    },
-    {
-      link: "/our-library",
-      linkName: "Our Library",
-    },
-    {
-      link: "/panic-button",
-      linkName: "Panic Button",
-    },
-    {
-      link: "/our-schools",
-      linkName: "Our Schools",
-    },
-    {
-      link: "/tutoring-facilities",
-      linkName: "One-to-one Tutoring",
-    },
-  ];
+  const handleMouseLeave = (type: string) => {
+    if (type === "services") {
+      setTimeoutId(
+        setTimeout(() => {
+          setServices(true);
+          setTimeoutId(null); // Reset timeoutId
+        }, 200)
+      );
+    } else if (type === "technologies") {
+      setTimeoutId(
+        setTimeout(() => {
+          setTechnologies(false);
+          setTimeoutId(null); // Reset timeoutId
+        }, 200)
+      );
+    }
+  };
 
   return (
-    <nav className="flex flex-col justify-center items-center sticky top-0 bg-white z-[10]">
-      <div className="flex items-center justify-between my-10 md:w-3/4 w-11/12">
-        <Link href="/">
-          <h1 className="text-4xl font-extrabold text-[#FF204E]">CGX</h1>
-        </Link>
-        {/* <ul className="md:flex items-center hidden pl-4 gap-8">
-          <li>
-            <Link href="/shop">Company</Link>
-          </li>
-          <li>
-            <Dropdown linkName="Services" dropdownList={aboutDropdown} />
-          </li>
-          <li>
-            <Dropdown linkName="Products" dropdownList={productDropdown} />
-          </li>
-          <li>
-            <Dropdown linkName="Services" dropdownList={servicesDropdown} />
-          </li>
-          <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li className="border-[1px] border-solid border-gray-400 hover:border-gray-900 duration-200 ease-in-out p-2 mx-5 hover:cursor-pointer">
-            <Link href='/'>
-              <span className="font-semibold">Get in touch</span>
-            </Link>
-          </li>
-        </ul> */}
-        <button className="bg-black text-white duration-200 ease-in-out p-3 hover:opacity-80 font-bold rounded">
-          <Link href="/">
-            <span className="font-semibold">Get in touch</span>
-          </Link>
-        </button>
-      </div>
-      {/* <div className="flex md:hidden w-11/12 p-2 my-4 justify-between items-center relative">
-        <h1 className="text-4xl font-extrabold text-red-700 md:hidden">CGX</h1>
-        {!toggleMenu && (
-          <IoMenuSharp
-            fontSize={28}
-            className="md:hidden cursor-pointer"
-            onClick={() => setToggleMenu(true)}
-          />
-        )}
-        {toggleMenu && (
-          <AiOutlineClose
-            fontSize={28}
-            className="md:hidden cursor-pointer"
-            onClick={() => setToggleMenu(false)}
-          />
-        )}
-        {toggleMenu && (
-          <ul
-            className="z-10 fixed -top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none
-            flex flex-col justify-start items-start rounded-md bg-[#fffbf2] animate-slide-in"
-          >
-            <li className="text-xl w-full my-2">
-              <AiOutlineClose onClick={() => setToggleMenu(false)} />
+    <nav className="flex flex-col justify-center items-center relative w-full">
+      <div className="hidden md:block my-6 w-3/4">
+        <div className="flex justify-between items-center">
+          <div>CGX</div>
+          <ul className="flex items-center gap-4">
+            <li
+              className="cursor-pointer flex items-center gap-2 font-semibold"
+              onMouseEnter={() => handleMouseEnter("services")}
+              onMouseLeave={() => handleMouseLeave("services")}
+            >
+              Services
+              {services ? <IoIosArrowDown /> : <IoIosArrowForward />}
             </li>
-            <ul className="flex flex-col px-3 pt-6 text-md gap-4 text-[#535479]">
-              <li>Shop</li>
-              <li>
-                <Dropdown
-                  linkName="About EdSpare"
-                  dropdownList={aboutDropdown}
-                />
-              </li>
-              <li>
-                <Dropdown linkName="Products" dropdownList={productDropdown} />
-              </li>
-              <li>
-                <Dropdown linkName="Services" dropdownList={servicesDropdown} />
-              </li>
-              <li>Blog</li>
-            </ul>
-            <div className="flex pt-3">
-              <button className="px-3 py-1 m-1 bg-transparent flex items-center gap-1">
-                <Link href="/login">
-                  <span>Login</span>
-                </Link>
-                <BiRightArrowAlt />
-              </button>
-              <button className="px-6 m-1 rounded-full bg-[#F7F9FC] hover:bg-[#130A46] hover:text-white">
-                Contact Us
-              </button>
-            </div>
+            <li
+              className="cursor-pointer flex items-center gap-2 font-semibold"
+              onMouseEnter={() => handleMouseEnter("technologies")}
+              onMouseLeave={() => handleMouseLeave("technologies")}
+            >
+              Technologies
+              {technologies ? <IoIosArrowDown /> : <IoIosArrowForward />}
+            </li>
+            <li
+              className="cursor-pointer flex items-center gap-2 font-semibold"
+              onMouseEnter={() => handleMouseEnter("industry")}
+              onMouseLeave={() => handleMouseLeave("industry")}
+            >
+              Industries
+              {industry ? <IoIosArrowDown /> : <IoIosArrowForward />}
+            </li>
+            <li
+              className="cursor-pointer flex items-center gap-2 font-semibold"
+              onMouseEnter={() => handleMouseEnter("company")}
+              onMouseLeave={() => handleMouseLeave("company")}
+            >
+              Company
+              {company ? <IoIosArrowDown /> : <IoIosArrowForward />}
+            </li>
+            <li className="font-semibold">Blogs</li>
+            <li className="font-semibold">Career</li>
           </ul>
+          <div>
+            <button className="bg-blue-600 text-white px-3 py-2 rounded-full flex justify-center items-center gap-2 text-base hover:bg-blue-700 hover:gap-4 ease-in-out duration-200">
+              Contact us
+            </button>
+          </div>
+        </div>
+        <div className="w-full border-t border-transparent"></div>
+        {services && (
+          <div
+            className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex justify-center items-center"
+            onMouseEnter={() => clearTimeout(timeoutId!)}
+            onMouseLeave={() => setServices(false)}
+          >
+            <div className="w-3/4 grid grid-cols-4">
+              <div className="py-2 my-2">
+                <h2 className="font-semibold flex gap-2 items-center">
+                  <FcEngineering /> Engineering
+                </h2>
+                <ul className="grid gap-2 my-2">
+                  <li className="hover:cursor-pointer hover:text-sky-300 ease-in-out duration-200">Web Applications</li>
+                  <li>Mobile Applications</li>
+                  <li>Software Application Development</li>
+                  <li>Design & Implementation</li>
+                  <li>Custom Software Development</li>
+                </ul>
+              </div>
+              <div className="py-2 my-2">
+                <h2 className="font-semibold flex gap-2 items-center">
+                  <MdSecurity className="text-purple-400" /> Cyber Security
+                </h2>
+                <ul className="grid gap-2 my-2">
+                  <li>Penetration Testing</li>
+                  <li>Intrusion Detection and Prevention System</li>
+                  <li>Incident Response</li>
+                  <li>Identity and Access Management (IAM)</li>
+                  <li>Security Compliance Review</li>
+                  <li>IT Risk Management</li>
+                </ul>
+              </div>
+              <div className="py-2 my-2">
+                <h2 className="font-semibold flex gap-2 items-center">
+                  <FaCloud className="text-sky-400" /> Cloud Consultation
+                </h2>
+                <ul className="grid gap-2 my-2">
+                  <li>Infrastructure & Architecture Design</li>
+                  <li>DevOps</li>
+                  <li>Cloud Engineering</li>
+                </ul>
+              </div>
+              <div className="py-2 my-2">
+                <h2 className="font-semibold flex gap-2 items-center">
+                  <FcPositiveDynamic /> Digital Marketing
+                </h2>
+                <ul className="grid gap-2 my-2">
+                  <li>Search Engine Optimization</li>
+                  <li>Branding & Campaign Design</li>
+                  <li>Social Media Marketing</li>
+                  <li>Product Design</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         )}
-      </div> */}
-      <div className="md:w-3/4 w-full border-[0.5px] border-solid border-gray-200"></div>
+        {technologies && (
+          <div
+            className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex justify-center items-center bg-sky-400"
+            onMouseEnter={() => clearTimeout(timeoutId!)}
+            onMouseLeave={() => setTechnologies(false)}
+          >
+            technologies
+          </div>
+        )}
+        {company && (
+          <div
+            className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex justify-center items-center bg-sky-400"
+            onMouseEnter={() => clearTimeout(timeoutId!)}
+            onMouseLeave={() => setCompany(false)}
+          >
+            company
+          </div>
+        )}
+        {industry && (
+          <div
+            className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex justify-center items-center bg-sky-400"
+            onMouseEnter={() => clearTimeout(timeoutId!)}
+            onMouseLeave={() => setIndustry(false)}
+          >
+            industry
+          </div>
+        )}
+      </div>
     </nav>
   );
 };

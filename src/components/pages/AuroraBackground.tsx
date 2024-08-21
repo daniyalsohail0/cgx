@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 import { AuroraBackground } from "./AuroraBackgroundCode";
-import { IoLockClosedSharp } from "react-icons/io5";
+// import { IoLockClosedSharp } from "react-icons/io5";
+import { FaArrowRight } from "react-icons/fa";
+import Image from "next/image";
 
 export function AuroraBackgroundDemo() {
   return (
@@ -18,37 +20,43 @@ export function AuroraBackgroundDemo() {
         }}
         className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
-        <div className="flex flex-col items-center justify-center py-4">
-          <div className="text-center my-12">
-            <h1 className="text-4xl md:text-5xl font-bold uppercase text-gray-800 tracking-wide">
-              Secure Your Infrastructure
-            </h1>
-            <p className="mt-4 md:text-lg text-md text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              We offer comprehensive IT services designed to help you build a
-              stronger, more secure IT environment. Protect your business with
-              our expert solutions.
-            </p>
-          </div>
-        </div>
-
-        <div className="my-16 text-center">
-          <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
-            Why Work with Us?
+        <div className="flex flex-col justify-center items-center md:w-3/4 md:my-32 my-16">
+          <h1 className="md:text-5xl text-3xl text-center font-bold leading-relaxed my-8 p-2">
+            Deliver software solutions that drive change{" "}
+            <span className="bg-sky-200 rounded">months faster</span>
           </h1>
-          <div className="my-6 flex flex-col md:flex-row gap-10 justify-center items-center">
-            <p className="flex items-center gap-4 text-lg md:text-xl leading-snug">
-              <span className="text-4xl font-bold md:text-5xl">50+</span>
-              Delivered Software Projects
-            </p>
-            <p className="flex items-center gap-4 text-lg md:text-xl leading-snug">
-              <span className="text-4xl font-bold md:text-5xl">100%</span>
-              Efficiency Rate
-            </p>
-            <p className="flex items-center gap-4 text-lg md:text-xl leading-snug">
-              <IoLockClosedSharp className="text-4xl md:text-5xl" />
-              Highly Accredited Security
-            </p>
+
+          <p className="my-8 text-center md:text-base md:w-2/3 text-sm p-2">
+            We help technology-first companies deliver software and business
+            value faster by bringing in best development practices and skills
+            that unblock in-house teams.
+          </p>
+
+          <div className="md:flex flex-col justify-center items-center md:w-3/4 w-11/12 my-8">
+            <div className="grid grid-cols-3 md:grid-cols-6 justify-between items-center gap-10">
+              <Image src="/ibm.png" alt="ibm cloud" width={150} height={150} />
+              <Image src="/aws.png" alt="aws cloud" width={150} height={150} />
+              <Image
+                src="/azure.png"
+                alt="azure cloud"
+                width={150}
+                height={150}
+              />
+              <Image src="/gcp.png" alt="gcp cloud" width={150} height={150} />
+              <Image src="/splunk.png" alt="splunk" width={150} height={150} />
+              <Image
+                src="/burpsuite.png"
+                alt="burpsuite"
+                width={150}
+                height={150}
+              />
+            </div>
           </div>
+
+          <button className="bg-blue-600 text-white px-6 py-4 rounded-full flex justify-center items-center gap-2 text-base hover:bg-blue-700 hover:gap-4 ease-in-out duration-200">
+            Learn more
+            <FaArrowRight />
+          </button>
         </div>
       </motion.div>
     </AuroraBackground>

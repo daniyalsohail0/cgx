@@ -8,7 +8,7 @@ import Services from "@/components/pages/Services";
 export default function Home() {
   return (
     <main className="flex flex-col items-center justify-center w-full">
-      <Banner />
+      {/* <Banner /> */}
       <div className="w-full">
         <AuroraBackgroundDemo />
       </div>
