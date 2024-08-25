@@ -17,13 +17,13 @@ const Services: React.FC = () => {
     <div className="flex flex-col items-center justify-center w-full">
       <div className="w-11/12 md:w-3/4 my-10">
         <div className="py-12 flex flex-col justify-center items-center">
-          <div className="blue-glassmorphism text-white px-6 py-3 m-8 text-center text-sm md:text-base rounded-md tracking-widest">
+          <div className="blue-glassmorphism text-black font-bold px-6 py-3 m-8 text-center text-sm md:text-base rounded-md tracking-widest">
             OUR SERVICES
           </div>
           <h1 className="text-4xl md:text-5xl font-bold m-4 p-2 text-center">
             Field of <span className="text-[#FF204E]">Expertise</span>
           </h1>
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-12 my-8 md:w-3/4 w-11/12">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-8 my-8 w-11/12">
             {/* Web & Mobile Development */}
             <div className="border-[1px] border-gray-200 shadow-lg rounded-xl p-6 flex flex-col justify-center bg-white hover:bg-gray-50 ease-in-out duration-200">
               <Image
@@ -41,9 +41,7 @@ const Services: React.FC = () => {
                 mobile applications tailored to meet the specific needs of your
                 business. Our team leverages the latest technologies and best
                 practices to deliver solutions that not only look great but also
-                perform exceptionally well. Whether it&apos;s an e-commerce platform,
-                a corporate website, or a custom mobile app, we ensure a
-                seamless user experience across all devices.
+                perform exceptionally well.
               </p>
             </div>
 
@@ -58,9 +56,7 @@ const Services: React.FC = () => {
                 solutions that monitor your network for suspicious activities
                 and potential threats. Our systems are designed to detect and
                 prevent cyber-attacks in real-time, ensuring your business
-                remains secure. We tailor our IDPS solutions to fit your
-                organization&apos;s specific requirements, providing robust
-                protection against an evolving threat landscape.
+                remains secure.
               </p>
               <Image
                 src="/cyber.jpg"
@@ -88,11 +84,7 @@ const Services: React.FC = () => {
                 assess, and mitigate risks within your IT infrastructure. We
                 conduct thorough compliance reviews to ensure your organization
                 adheres to industry regulations and standards. By identifying
-                potential vulnerabilities and implementing effective controls,
-                we help you minimize risk and maintain the integrity of your IT
-                systems. Our proactive approach ensures that your business
-                remains compliant and secure in an increasingly regulated
-                environment.
+                potential vulnerabilities and implementing effective controls.
               </p>
             </div>
 
@@ -107,9 +99,7 @@ const Services: React.FC = () => {
                 identify vulnerabilities before malicious hackers can exploit
                 them, helping you strengthen your defenses. Our ethical hacking
                 team uses advanced techniques to test the resilience of your
-                network, applications, and endpoints. After the test, we provide
-                detailed reports and actionable recommendations to enhance your
-                security posture.
+                network, applications, and endpoints.
               </p>
               <Image
                 src="/penn.jpg"
@@ -138,9 +128,7 @@ const Services: React.FC = () => {
                 smoothly and efficiently. Our team manages and maintains your IT
                 infrastructure, including servers, networks, and storage
                 systems. We implement robust network solutions that ensure
-                optimal performance, security, and scalability. Whether you need
-                ongoing maintenance or a complete network overhaul, we provide
-                solutions that align with your business objectives.
+                optimal performance, security, and scalability.
               </p>
             </div>
 
@@ -154,10 +142,7 @@ const Services: React.FC = () => {
                 Implementation services. We help businesses migrate to cloud
                 platforms, optimize cloud infrastructure, and implement
                 cloud-based solutions that drive efficiency and innovation. Our
-                experts work closely with you to understand your needs and
-                design a cloud strategy that aligns with your goals. From
-                planning to execution, we ensure a smooth transition to the
-                cloud, maximizing your return on investment.
+                experts work closely with you to understand your needs.
               </p>
               <Image
                 src="/cloud.jpg"
