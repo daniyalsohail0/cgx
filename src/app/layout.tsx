@@ -22,8 +22,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {/* <Navbar /> */}
-        <nav className="flex justify-center items-center sticky">
-          <section className="flex justify-between items-center w-3/4">
+        <nav className="flex justify-center items-center sticky w-full">
+          <section className="flex justify-between items-center md:w-3/4 w-full mx-4">
             <Image
               src={`/daniyal-final.png`}
               alt="cgx logo"

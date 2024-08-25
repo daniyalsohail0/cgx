@@ -9,6 +9,7 @@ import {
   FcRight,
   FcDown,
 } from "react-icons/fc";
+import { TimelineDemo } from "./TimelineDemo";
 
 const Expertise: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ const Expertise: React.FC = () => {
       <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide m-4 p-2 text-center">
         The Way <span className="text-[#FF204E]">We Work</span>
       </h1>
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-8 w-11/12 md:w-3/4 mt-8">
+      <div className="grid md:grid-cols-3 grid-cols-1 gap-8 w-11/12 md:w-3/4 my-8">
         <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
           <FcBullish className="text-3xl mb-8" />
           <h2 className="text-lg md:text-xl font-semibold mb-4">
@@ -86,6 +87,10 @@ const Expertise: React.FC = () => {
             in Boston in 1993.
           </p>
         </div>
+      </div>
+      <br />
+      <div className="dark w-full">
+        <TimelineDemo />
       </div>
       <br />
       <div className="blue-glassmorphism px-6 py-3 m-8 text-center text-sm md:text-base rounded-md tracking-widest">

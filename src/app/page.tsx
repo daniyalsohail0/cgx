@@ -14,7 +14,7 @@ export default function Home() {
       <div className="w-full">
         <AuroraBackgroundDemo />
       </div>
-      <div className="md:w-full w-11/12">
+      <div className="md:w-3/4 w-11/12">
         <CardsCarousel />
       </div>
       <Services />

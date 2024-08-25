@@ -6,14 +6,14 @@ const Banner = () => {
   return (
     <div className="flex flex-col justify-center items-center">
 
-      <div className="flex flex-col justify-center items-center md:w-3/4 md:my-32 my-16">
+      <div className="flex flex-col justify-center items-center md:w-3/4 w-full md:my-32 my-16">
 
-        <h1 className="md:text-5xl text-3xl text-center font-bold leading-relaxed my-8 p-2">
+        <h1 className="md:text-5xl text-3xl md:text-center text-left font-bold leading-relaxed my-8 p-2">
           Deliver software solutions that drive change{" "}
           <span className="bg-sky-200 rounded">months faster</span>
         </h1>
       
-        <p className="my-8 text-center md:text-base md:w-2/3 text-sm p-2">
+        <p className="my-8 md:text-center text-left md:text-base md:w-2/3 text-sm p-2">
           We help technology-first companies deliver software and business value
           faster by bringing in best development practices and skills that
           unblock in-house teams.
