@@ -226,8 +226,8 @@ const Navbar = () => {
       <div className="md:hidden flex w-11/12 justify-between items-center relative py-4">
         <Link href={`/`}>
           <Image
-            src="/assets/logo.png"
-            alt="Al-khair logo"
+            src="/logo.png"
+            alt="Cyber Genesis X Logo"
             width={140}
             height={50}
           />
@@ -252,7 +252,7 @@ const Navbar = () => {
                 <Link href={`/`}>
                   <Image
                     src="/logo.png"
-                    alt="Al-khair logo"
+                    alt="Cyber Genesis X Logo"
                     width={100}
                     height={50}
                   />
