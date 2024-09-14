@@ -6,15 +6,15 @@ const MobileNavFooter = () => {
   return (
     <div className="p-6">
       <p className="w-4/5 py-5">
-        Become a part of Al Khair Foundation's family to stay updated with our
+        Become a part of our family to stay updated with our
         campaigns and organization.
       </p>
       <div className="flex gap-4">
         <button className="px-4 py-2 bg-[#294693] text-white rounded-full font-semibold">
-          Join Us
+          Contact Us
         </button>
         <button className="px-4 py-2 text-black rounded-full border border-solid font-semibold">
-          Sign In
+          Get a quote
         </button>
       </div>
       <ul className="flex gap-2 my-5">

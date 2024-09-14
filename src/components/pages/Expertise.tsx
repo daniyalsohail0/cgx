@@ -13,15 +13,15 @@ import { TimelineDemo } from "./TimelineDemo";
 
 const Expertise: React.FC = () => {
   return (
-    <div className="bg-slate-950 text-white w-full flex flex-col justify-center items-center py-12">
-      <div className="blue-glassmorphism px-6 py-3 m-8 text-center text-sm md:text-base rounded-md tracking-widest">
+    <div className="w-full flex flex-col justify-center items-center py-12">
+      <div className="bg-sky-300 font-bold px-6 py-3 m-8 text-center text-sm md:text-base rounded-md tracking-widest">
         OUR APPROACH
       </div>
       <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide m-4 p-2 text-center">
         The Way <span className="text-[#FF204E]">We Work</span>
       </h1>
       <div className="grid md:grid-cols-3 grid-cols-1 gap-8 w-11/12 md:w-3/4 my-8">
-        <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+        <div className="bg-sky-100 hover:bg-sky-200 p-6 rounded-lg transition-colors duration-300">
           <FcBullish className="text-3xl mb-8" />
           <h2 className="text-lg md:text-xl font-semibold mb-4">
             Analytical Approach
@@ -32,7 +32,7 @@ const Expertise: React.FC = () => {
             business goals and needs.
           </p>
         </div>
-        <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+        <div className="bg-sky-100 hover:bg-sky-200 p-6 rounded-lg transition-colors duration-300">
           <FcApproval className="text-3xl mb-8" />
           <h2 className="text-lg md:text-xl font-semibold mb-4">
             Sustainability and Flexibility
@@ -43,7 +43,7 @@ const Expertise: React.FC = () => {
             down when you need it.
           </p>
         </div>
-        <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+        <div className="bg-sky-100 hover:bg-sky-200 p-6 rounded-lg transition-colors duration-300">
           <FcIdea className="text-3xl mb-8" />
           <h2 className="text-lg md:text-xl font-semibold mb-4">
             Strategic Thinking
@@ -54,7 +54,7 @@ const Expertise: React.FC = () => {
             your organization’s leadership.
           </p>
         </div>
-        <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+        <div className="bg-sky-100 hover:bg-sky-200 p-6 rounded-lg transition-colors duration-300">
           <FcGlobe className="text-3xl mb-8" />
           <h2 className="text-lg md:text-xl font-semibold mb-4">
             Reliable Governance
@@ -65,7 +65,7 @@ const Expertise: React.FC = () => {
             frequently update you on progress made.
           </p>
         </div>
-        <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+        <div className="bg-sky-100 hover:bg-sky-200 p-6 rounded-lg transition-colors duration-300">
           <FcMindMap className="text-3xl mb-8" />
           <h2 className="text-lg md:text-xl font-semibold mb-4">
             Robust Service Models
@@ -76,7 +76,7 @@ const Expertise: React.FC = () => {
             flexibility are our top priorities.
           </p>
         </div>
-        <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+        <div className="bg-sky-100 hover:bg-sky-200 p-6 rounded-lg transition-colors duration-300">
           <FcCustomerSupport className="text-3xl mb-8" />
           <h2 className="text-lg md:text-xl font-semibold mb-4">
             People-Centric Culture
@@ -89,11 +89,11 @@ const Expertise: React.FC = () => {
         </div>
       </div>
       <br />
-      <div className="dark w-full">
+      <div className="w-full">
         <TimelineDemo />
       </div>
       <br />
-      <div className="blue-glassmorphism px-6 py-3 m-8 text-center text-sm md:text-base rounded-md tracking-widest">
+      <div className="bg-sky-300 font-bold px-6 py-3 m-8 text-center text-sm md:text-base rounded-md tracking-widest">
         OUR PROCESS
       </div>
       <h1 className="text-4xl md:text-5xl font-bold uppercase tracking-wide m-4 p-2 text-center">
@@ -101,7 +101,7 @@ const Expertise: React.FC = () => {
         to us?
       </h1>
       <div className="flex flex-col md:flex-row justify-center items-center gap-6 w-11/12 md:w-3/4 mt-8 py-8">
-        <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+        <div className="bg-teal-100 p-6 rounded-lg transition-colors duration-300">
           <h4 className="text-xl text-[#FF204E] font-semibold mb-8">1</h4>
           <h2 className="text-lg md:text-xl font-semibold mb-4">
             Initial assessment
@@ -114,7 +114,7 @@ const Expertise: React.FC = () => {
           <FcRight className="text-2xl hidden md:block" />
           <FcDown className="text-2xl block md:hidden" />
         </div>
-        <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+        <div className="bg-teal-100 p-6 rounded-lg transition-colors duration-300">
           <h4 className="text-xl text-[#FF204E] font-semibold mb-8">2</h4>
           <h2 className="text-lg md:text-xl font-semibold mb-4">
             Deep research
@@ -128,7 +128,7 @@ const Expertise: React.FC = () => {
           <FcRight className="text-2xl hidden md:block" />
           <FcDown className="text-2xl block md:hidden" />
         </div>
-        <div className="white-glassmorphism hover:bg-gray-700 p-6 rounded-lg transition-colors duration-300">
+        <div className="bg-teal-100 p-6 rounded-lg transition-colors duration-300">
           <h4 className="text-xl text-[#FF204E] font-semibold mb-8">3</h4>
           <h2 className="text-lg md:text-xl font-semibold mb-4">
             Tailored solution

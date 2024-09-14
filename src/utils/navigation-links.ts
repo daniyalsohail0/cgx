@@ -1,23 +1,27 @@
-export const donationLinks = [
+export const industryLinks = [
   {
-    name: "Appeals",
-    slug: "/campaigns/appeals",
+    name: "Fintech",
+    slug: "/industry/fintech",
   },
   {
-    name: "Donations",
-    slug: "/campaigns/donations",
+    name: "Blockchain",
+    slug: "/industry/blockchain",
   },
   {
-    name: "Giving",
-    slug: "/campaigns/sadaqah",
+    name: "Artificial Intelligence",
+    slug: "/industry/ai",
   },
   {
-    name: "Qurbani",
-    slug: "/campaigns/qurbani",
+    name: "Real Estate",
+    slug: "/industry/real-estate",
   },
   {
-    name: "Zakat",
-    slug: "/campaigns/zakat",
+    name: "ECommerce",
+    slug: "/industry/e-commerce",
+  },
+  {
+    name: "Information Technology",
+    slug: "/industry/e-commerce",
   },
 ];
 
