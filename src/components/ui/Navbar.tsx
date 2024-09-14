@@ -1,40 +1,53 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
-import { FaCloud } from "react-icons/fa";
-import { FcAcceptDatabase, FcEngineering, FcPositiveDynamic } from "react-icons/fc";
-import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
-import { MdSecurity } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
+import { IoMenuOutline } from "react-icons/io5";
+import MobileDropdown from "./mobile-dropdown";
+import { BsCart } from "react-icons/bs";
+import { LuUser } from "react-icons/lu";
+import MobileNavFooter from "./mobile-nav-footer";
+import NavSearch from "./nav-search";
+import {
+  companyLinks,
+  servicesLinks,
+  donationLinks,
+  resourcesLinks } from '../../utils/navigation-links'
 
-const Navbar: React.FC = () => {
-  const [services, setServices] = useState<boolean>(true);
-  const [technologies, setTechnologies] = useState<boolean>(false);
-  const [industry, setIndustry] = useState<boolean>(false);
+const Navbar = () => {
+  const [donations, setDonations] = useState<boolean>(false);
   const [company, setCompany] = useState<boolean>(false);
+  const [resources, setResources] = useState<boolean>(false);
+  const [channels, setChannels] = useState<boolean>(false);
+  const [services, setServices] = useState<boolean>(false)
+
+  // Toggle for menu
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
 
   const handleMouseEnter = (type: string) => {
-    if (type === "services") {
-      setServices(true);
-      setTechnologies(false);
-      setIndustry(false);
+    if (type === "donations") {
+      setDonations(true);
       setCompany(false);
-    } else if (type === "technologies") {
-      setTechnologies(true);
-      setServices(false);
-      setIndustry(false);
-      setCompany(false);
+      setResources(false);
+      setChannels(false);
     } else if (type === "company") {
-      setServices(false);
-      setTechnologies(false);
-      setIndustry(false);
+      setDonations(false);
       setCompany(true);
-    } else if (type === "industry") {
-      setServices(false);
-      setTechnologies(false);
-      setIndustry(true);
+      setResources(false);
+      setChannels(false);
+    } else if (type === "resources") {
+      setDonations(false);
       setCompany(false);
+      setResources(true);
+      setChannels(false);
+    } else if (type === "channels") {
+      setDonations(false);
+      setCompany(false);
+      setResources(false);
+      setChannels(true);
     }
     if (timeoutId) {
       clearTimeout(timeoutId);
@@ -42,155 +55,251 @@ const Navbar: React.FC = () => {
   };
 
   const handleMouseLeave = (type: string) => {
-    if (type === "services") {
-      setTimeoutId(
-        setTimeout(() => {
-          setServices(true);
-          setTimeoutId(null); // Reset timeoutId
-        }, 200)
-      );
-    } else if (type === "technologies") {
-      setTimeoutId(
-        setTimeout(() => {
-          setTechnologies(false);
-          setTimeoutId(null); // Reset timeoutId
-        }, 200)
-      );
+    switch (type) {
+      case "donations":
+        setTimeoutId(
+          setTimeout(() => {
+            setDonations(false);
+            setTimeoutId(null); // Reset timeoutId
+          }, 200)
+        );
+        break;
+      case "company":
+        setTimeoutId(
+          setTimeout(() => {
+            setCompany(false);
+            setTimeoutId(null); // Reset timeoutId
+          }, 200)
+        );
+        break;
+      case "resources":
+        setTimeoutId(
+          setTimeout(() => {
+            setResources(false);
+            setTimeoutId(null); // Reset timeoutId
+          }, 200)
+        );
+        break;
+      case "services":
+        setTimeoutId(
+          setTimeout(() => {
+            setServices(false);
+            setTimeoutId(null); // Reset timeoutId
+          }, 200)
+        );
+        break;
+      default:
+        break;
     }
-  };
+  };  
 
   return (
-    <nav className="flex flex-col justify-center items-center relative w-full">
-      <div className="hidden md:block my-6 w-3/4">
-        <div className="flex justify-between items-center">
-          <div>CGX</div>
-          <ul className="flex items-center gap-4">
-            <li
-              className="cursor-pointer flex items-center gap-2 font-semibold"
-              onMouseEnter={() => handleMouseEnter("services")}
-              onMouseLeave={() => handleMouseLeave("services")}
+    <nav className="flex flex-col justify-center items-center w-full border-none text-black p-2 relative">
+      {/* Desktop Menu */}
+      <div className="md:flex justify-between items-center hidden w-3/4">
+        <Link href={`/`}>
+          <Image
+            src="/logo.png"
+            alt="Cyber Genesis X Logo"
+            width={150}
+            height={50}
+          />
+        </Link>
+        <ul className="flex gap-8">
+          <li className="text-base font-semibold cursor-pointer hover:text-blue-500">
+            <button
+              onMouseEnter={() => handleMouseEnter("donations")}
+              onMouseLeave={() => handleMouseLeave("donations")}
             >
-              Services
-              {services ? <IoIosArrowDown /> : <IoIosArrowForward />}
-            </li>
-            <li
-              className="cursor-pointer flex items-center gap-2 font-semibold"
-              onMouseEnter={() => handleMouseEnter("technologies")}
-              onMouseLeave={() => handleMouseLeave("technologies")}
-            >
-              Technologies
-              {technologies ? <IoIosArrowDown /> : <IoIosArrowForward />}
-            </li>
-            <li
-              className="cursor-pointer flex items-center gap-2 font-semibold"
-              onMouseEnter={() => handleMouseEnter("industry")}
-              onMouseLeave={() => handleMouseLeave("industry")}
-            >
-              Industries
-              {industry ? <IoIosArrowDown /> : <IoIosArrowForward />}
-            </li>
-            <li
-              className="cursor-pointer flex items-center gap-2 font-semibold"
+              Donations
+            </button>
+          </li>
+          <li className="text-base font-semibold cursor-pointer hover:text-blue-500">
+            <button
               onMouseEnter={() => handleMouseEnter("company")}
               onMouseLeave={() => handleMouseLeave("company")}
             >
               Company
-              {company ? <IoIosArrowDown /> : <IoIosArrowForward />}
-            </li>
-            <li className="font-semibold">Blogs</li>
-            <li className="font-semibold">Career</li>
-          </ul>
-          <div>
-            <button className="bg-blue-600 text-white px-3 py-2 rounded-full flex justify-center items-center gap-2 text-base hover:bg-blue-700 hover:gap-4 ease-in-out duration-200">
-              Contact us
             </button>
-          </div>
+          </li>
+          <li className="text-base font-semibold cursor-pointer hover:text-blue-500">
+            <button
+              onMouseEnter={() => handleMouseEnter("resources")}
+              onMouseLeave={() => handleMouseLeave("resources")}
+            >
+              Resources
+            </button>
+          </li>
+          <li className="text-base font-semibold cursor-pointer hover:text-blue-500">
+            <button
+              onMouseEnter={() => handleMouseEnter("channels")}
+              onMouseLeave={() => handleMouseLeave("channels")}
+            >
+              Channels
+            </button>
+          </li>
+        </ul>
+        <button className="bg-blue-600 px-4 py-2 text-white rounded-full text-base font-semibold hover:scale-105 duration-200 ease-in-out transition-transform">
+          Contact Us
+        </button>
+      </div>
+
+      {donations && (
+        <div
+          onMouseEnter={() => clearTimeout(timeoutId!)}
+          onMouseLeave={() => setDonations(false)}
+          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex flex-col gap-8 justify-center items-center place-self-center text-black w-3/4"
+        >
+          {donationLinks.map((link, index) => (
+            <Link
+              href={link.slug}
+              key={index}
+              className="hover:bg-sky-100 p-4"
+              onClick={() => setDonations(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
-        <div className="w-full border-t border-transparent"></div>
-        {services && (
-          <div
-            className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex justify-center items-center"
-            onMouseEnter={() => clearTimeout(timeoutId!)}
-            onMouseLeave={() => setServices(false)}
-          >
-            <div className="w-3/4 grid grid-cols-4">
-              <div className="py-2 my-2">
-                <h2 className="font-semibold flex gap-2 items-center">
-                  <FcEngineering /> Engineering
-                </h2>
-                <ul className="grid gap-2 my-2">
-                  <li className="hover:cursor-pointer hover:text-sky-300 ease-in-out duration-200">Web Applications</li>
-                  <li>Mobile Applications</li>
-                  <li>Software Application Development</li>
-                  <li>Design & Implementation</li>
-                  <li>Custom Software Development</li>
-                </ul>
-              </div>
-              <div className="py-2 my-2">
-                <h2 className="font-semibold flex gap-2 items-center">
-                  <MdSecurity className="text-purple-400" /> Cyber Security
-                </h2>
-                <ul className="grid gap-2 my-2">
-                  <li>Penetration Testing</li>
-                  <li>Intrusion Detection and Prevention System</li>
-                  <li>Incident Response</li>
-                  <li>Identity and Access Management (IAM)</li>
-                  <li>Security Compliance Review</li>
-                  <li>IT Risk Management</li>
-                </ul>
-              </div>
-              <div className="py-2 my-2">
-                <h2 className="font-semibold flex gap-2 items-center">
-                  <FaCloud className="text-sky-400" /> Cloud Consultation
-                </h2>
-                <ul className="grid gap-2 my-2">
-                  <li>Infrastructure & Architecture Design</li>
-                  <li>DevOps</li>
-                  <li>Cloud Engineering</li>
-                </ul>
-              </div>
-              <div className="py-2 my-2">
-                <h2 className="font-semibold flex gap-2 items-center">
-                  <FcPositiveDynamic /> Digital Marketing
-                </h2>
-                <ul className="grid gap-2 my-2">
-                  <li>Search Engine Optimization</li>
-                  <li>Branding & Campaign Design</li>
-                  <li>Social Media Marketing</li>
-                  <li>Product Design</li>
-                </ul>
+      )}
+
+      {services && (
+        <div
+          onMouseEnter={() => clearTimeout(timeoutId!)}
+          onMouseLeave={() => setCompany(false)}
+          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex flex-col gap-8 justify-center items-center place-self-center text-black w-3/4"
+        >
+          {servicesLinks.map((link, index) => (
+            <Link
+              href={link.slug}
+              key={index}
+              className="hover:bg-sky-100 p-4"
+              onClick={() => setServices(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {resources && (
+        <div
+          onMouseEnter={() => clearTimeout(timeoutId!)}
+          onMouseLeave={() => setResources(false)}
+          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex flex-col gap-8 justify-center items-center place-self-center text-black w-3/4"
+        >
+          {resourcesLinks.map((link, index) => (
+            <Link
+              href={link.slug}
+              key={index}
+              className="hover:bg-sky-100 p-4"
+              onClick={() => setResources(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {company && (
+        <div
+          onMouseEnter={() => clearTimeout(timeoutId!)}
+          onMouseLeave={() => setChannels(false)}
+          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex flex-col gap-8 justify-center items-center place-self-center text-black w-3/4"
+        >
+          {companyLinks.map((link, index) => (
+            <Link
+              href={link.slug}
+              key={index}
+              className="hover:bg-sky-100 p-4"
+              onClick={() => setChannels(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {/* Mobile Menu */}
+      <div className="md:hidden flex w-11/12 justify-between items-center relative py-4">
+        <Link href={`/`}>
+          <Image
+            src="/assets/logo.png"
+            alt="Al-khair logo"
+            width={140}
+            height={50}
+          />
+        </Link>
+        <div className="flex items-center gap-2">
+          <LuUser className="text-2xl" />
+          <BsCart className="text-2xl" />
+          <button onClick={() => setToggleMenu(true)}>
+            <IoMenuOutline className="text-3xl" />
+          </button>
+        </div>
+      </div>
+      {toggleMenu && (
+        <div
+          className="z-[20] fixed -top-0 -right-0 w-full min-h-screen md:hidden list-none
+      flex flex-col justify-between items-start bg-white animate-slide-in duration-200 ease-in-out text-black max-h-screen"
+        >
+          <div className="w-full">
+            {/* Top toggle bar */}
+            <div className="w-full flex justify-center items-center bg-[#294693] p-4">
+              <div className="flex justify-between items-center w-11/12 py-4">
+                <Link href={`/`}>
+                  <Image
+                    src="/assets/logo.png"
+                    alt="Al-khair logo"
+                    width={140}
+                    height={50}
+                  />
+                </Link>
+                <div className="flex items-center text-white gap-2">
+                  <LuUser className="text-2xl" />
+                  <BsCart className="text-2xl" />
+                  <button onClick={() => setToggleMenu(false)}>
+                    <IoMdClose className="text-3xl" />
+                  </button>
+                </div>
               </div>
             </div>
+
+            {/* Search Bar */}
+            <NavSearch />
+
+            {/* Main navigation panel */}
+            <ul className="px-6 py-4 w-full flex flex-col gap-4">
+              <MobileDropdown
+                name="Donations"
+                list={donationLinks}
+                setToggleMenu={setToggleMenu}
+              />
+              <MobileDropdown
+                name="Company"
+                list={companyLinks}
+                setToggleMenu={setToggleMenu}
+              />
+              <MobileDropdown
+                name="Resources"
+                list={donationLinks}
+                setToggleMenu={setToggleMenu}
+              />
+              <MobileDropdown
+                name="Channels"
+                list={donationLinks}
+                setToggleMenu={setToggleMenu}
+              />
+              <li className="text-xl font-semibold">
+                <Link href={`/contact-us`}>Contact Us</Link>
+              </li>
+            </ul>
           </div>
-        )}
-        {technologies && (
-          <div
-            className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex justify-center items-center bg-sky-400"
-            onMouseEnter={() => clearTimeout(timeoutId!)}
-            onMouseLeave={() => setTechnologies(false)}
-          >
-            technologies
-          </div>
-        )}
-        {company && (
-          <div
-            className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex justify-center items-center bg-sky-400"
-            onMouseEnter={() => clearTimeout(timeoutId!)}
-            onMouseLeave={() => setCompany(false)}
-          >
-            company
-          </div>
-        )}
-        {industry && (
-          <div
-            className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex justify-center items-center bg-sky-400"
-            onMouseEnter={() => clearTimeout(timeoutId!)}
-            onMouseLeave={() => setIndustry(false)}
-          >
-            industry
-          </div>
-        )}
-      </div>
+
+          {/* Navigation menu's footer */}
+          <MobileNavFooter />
+        </div>
+      )}
     </nav>
   );
 };

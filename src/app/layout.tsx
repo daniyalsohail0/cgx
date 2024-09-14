@@ -5,6 +5,7 @@ import "./globals.css";
 import Footer from "@/components/ui/Footer";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+import Navbar from "@/components/ui/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,21 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <Navbar /> */}
-        <nav className="flex justify-center items-center sticky w-full">
-          <section className="flex justify-between items-center md:w-3/4 w-full mx-4">
-            <Image
-              src={`/daniyal-final.png`}
-              alt="cgx logo"
-              width={150}
-              height={75}
-            />
-            <button className="bg-blue-600 text-white px-3 py-2 rounded-full flex justify-center items-center gap-2 text-base hover:bg-blue-700 hover:gap-4 ease-in-out duration-200">
-             Contact Us
-            <FaArrowRight />
-          </button>
-          </section>
-        </nav>
+        <Navbar />
         {children}
         <Footer />
       </body>
