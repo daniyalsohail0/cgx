@@ -15,6 +15,7 @@ import {
   resourcesLinks,
   industryLinks,
 } from "../../utils/navigation-links";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 const Navbar = () => {
   const [services, setServices] = useState<boolean>(false);
@@ -150,18 +151,30 @@ const Navbar = () => {
         <div
           onMouseEnter={() => clearTimeout(timeoutId!)}
           onMouseLeave={() => setServices(false)}
-          className="p-2 absolute left-0 right-0 top-full z-50 bg-white w-3/4 flex flex-col"
+          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex gap-8 justify-center items-center place-self-center text-black w-3/4"
         >
-          {servicesLinks.map((link, index) => (
-            <Link
-              href={link.slug}
-              key={index}
-              className="hover:bg-sky-100 p-4"
-              onClick={() => setServices(false)}
-            >
-              {link.name}
+          <div className="w-1/3 p-4 m-4">
+            <h1 className="text-xl font-bold">
+              Learn more about our services in order to bring out the best of
+              your products
+            </h1>
+            <br />
+            <Link href={`/services`} className="flex items-center gap-2 text-sm text-blue-800 hover:underline">
+              All services <FaLongArrowAltRight />
             </Link>
-          ))}
+          </div>
+          <div className="grid grid-cols-4 w-full gap-8">
+            {servicesLinks.map((link, index) => (
+              <Link
+                href={link.slug}
+                key={index}
+                className="hover:bg-gray-200 rounded duration-200 ease-in-out p-4"
+                onClick={() => setServices(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
 
