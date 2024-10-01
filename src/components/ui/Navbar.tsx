@@ -150,7 +150,7 @@ const Navbar = () => {
         <div
           onMouseEnter={() => clearTimeout(timeoutId!)}
           onMouseLeave={() => setServices(false)}
-          className="p-2 absolute left-0 right-0 top-full z-50 bg-white w-3/4 grid grid-cols-4 gap-4 place-self-center"
+          className="p-2 absolute left-0 right-0 top-full z-50 bg-white w-3/4 flex flex-col"
         >
           {servicesLinks.map((link, index) => (
             <Link

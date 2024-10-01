@@ -1,10 +1,10 @@
 import { AuroraBackgroundDemo } from "@/components/pages/AuroraBackground";
-import Banner from "@/components/pages/Banner";
 import { CardsCarousel } from "@/components/pages/CarouselDemo";
 import Contact from "@/components/pages/Contact";
 import Expertise from "@/components/pages/Expertise";
 import FAQSection from "@/components/pages/Faqs";
 import { HeroScrollDemo } from "@/components/pages/HeroScrollDemo";
+import { InfiniteMovingCardsDemo } from "@/components/pages/infinite-moving-card";
 import Services from "@/components/pages/Services";
 
 export default function Home() {
@@ -22,6 +22,9 @@ export default function Home() {
         <HeroScrollDemo />
       </div>
       <Expertise />
+      <div className="w-full">
+        <InfiniteMovingCardsDemo />
+      </div>
       <FAQSection />
       <Contact />
     </main>
