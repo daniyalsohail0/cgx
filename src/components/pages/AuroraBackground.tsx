@@ -21,7 +21,7 @@ export function AuroraBackgroundDemo() {
         className="relative flex flex-col gap-4 items-center justify-center px-4"
       >
         <div className="flex flex-col justify-center items-center md:w-3/4 md:my-32 my-16">
-          <h1 className="md:text-5xl text-3xl text-center font-bold leading-relaxed my-8 p-2">
+          <h1 className="md:text-5xl text-3xl text-center font-bold leading-relaxed md:my-8 p-2">
             Deliver software solutions that drive change{" "}
             <span className="bg-sky-200 rounded">months faster</span>
           </h1>
@@ -33,22 +33,20 @@ export function AuroraBackgroundDemo() {
           </p>
 
           <div className="md:flex flex-col justify-center items-center md:w-3/4 w-11/12 my-8">
-            <div className="grid grid-cols-3 md:grid-cols-6 justify-between items-center gap-10">
-              <Image src="/ibm.png" alt="ibm cloud" width={150} height={150} />
-              <Image src="/aws.png" alt="aws cloud" width={150} height={150} />
+            <div className="grid grid-cols-2 md:grid-cols-4 place-self-center gap-8">
+              <Image src="/aws.png" alt="aws cloud" width={100} height={100} />
               <Image
                 src="/azure.png"
                 alt="azure cloud"
-                width={150}
-                height={150}
+                width={100}
+                height={100}
               />
-              <Image src="/gcp.png" alt="gcp cloud" width={150} height={150} />
-              <Image src="/splunk.png" alt="splunk" width={150} height={150} />
+              <Image src="/gcp.png" alt="gcp cloud" width={100} height={100} />
               <Image
                 src="/burpsuite.png"
                 alt="burpsuite"
-                width={150}
-                height={150}
+                width={100}
+                height={100}
               />
             </div>
           </div>

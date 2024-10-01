@@ -141,7 +141,7 @@ const Navbar = () => {
         </ul>
         <Link
           href={`/contact-us`}
-          className="bg-blue-600 px-4 py-2 text-white rounded-full text-base font-semibold hover:scale-105 duration-200 ease-in-out transition-transform"
+          className="bg-blue-600 px-4 py-2 text-white rounded-full text-base font-semibold hover:opacity-70 duration-200 ease-in-out transition-transform"
         >
           Contact Us
         </Link>
@@ -159,7 +159,10 @@ const Navbar = () => {
               your products
             </h1>
             <br />
-            <Link href={`/services`} className="flex items-center gap-2 text-sm text-blue-800 hover:underline">
+            <Link
+              href={`/services`}
+              className="flex items-center gap-2 text-sm text-blue-800 hover:underline"
+            >
               All services <FaLongArrowAltRight />
             </Link>
           </div>
@@ -182,18 +185,33 @@ const Navbar = () => {
         <div
           onMouseEnter={() => clearTimeout(timeoutId!)}
           onMouseLeave={() => setCompany(false)}
-          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex flex-col gap-8 justify-center items-center place-self-center text-black w-3/4"
+          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex gap-8 justify-center items-center place-self-center text-black w-3/4"
         >
-          {companyLinks.map((link, index) => (
+          <div className="w-1/3 p-4 m-4">
+            <h1 className="text-xl font-bold">
+              We like to know our customers, and we believe you should learn
+              about us too.
+            </h1>
+            <br />
             <Link
-              href={link.slug}
-              key={index}
-              className="hover:bg-sky-100 p-4"
-              onClick={() => setServices(false)}
+              href={`/services`}
+              className="flex items-center gap-2 text-sm text-blue-800 hover:underline"
             >
-              {link.name}
+              Customer Stories <FaLongArrowAltRight />
             </Link>
-          ))}
+          </div>
+          <div className="grid grid-cols-2 w-full gap-8">
+            {companyLinks.map((link, index) => (
+              <Link
+                href={link.slug}
+                key={index}
+                className="hover:bg-gray-200 rounded duration-200 ease-in-out p-4"
+                onClick={() => setServices(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
 
@@ -201,18 +219,32 @@ const Navbar = () => {
         <div
           onMouseEnter={() => clearTimeout(timeoutId!)}
           onMouseLeave={() => setIndustry(false)}
-          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex flex-col gap-8 justify-center items-center place-self-center text-black w-3/4"
+          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex gap-8 justify-center items-center place-self-center text-black w-3/4"
         >
-          {industryLinks.map((link, index) => (
+          <div className="w-1/3 p-4 m-4">
+            <h1 className="text-xl font-bold">
+              Learn more about how we can help you grow in your industry.
+            </h1>
+            <br />
             <Link
-              href={link.slug}
-              key={index}
-              className="hover:bg-sky-100 p-4"
-              onClick={() => setIndustry(false)}
+              href={`/services`}
+              className="flex items-center gap-2 text-sm text-blue-800 hover:underline"
             >
-              {link.name}
+              Customer Stories <FaLongArrowAltRight />
             </Link>
-          ))}
+          </div>
+          <div className="grid grid-cols-2 w-full gap-8">
+            {industryLinks.map((link, index) => (
+              <Link
+                href={link.slug}
+                key={index}
+                className="hover:bg-gray-200 rounded duration-200 ease-in-out p-4"
+                onClick={() => setServices(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
 
@@ -220,18 +252,33 @@ const Navbar = () => {
         <div
           onMouseEnter={() => clearTimeout(timeoutId!)}
           onMouseLeave={() => setResources(false)}
-          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex flex-col gap-8 justify-center items-center place-self-center text-black w-3/4"
+          className="p-2 absolute left-0 right-0 top-full z-50 bg-white flex gap-8 justify-center items-center place-self-center text-black w-3/4"
         >
-          {resourcesLinks.map((link, index) => (
+          <div className="w-1/3 p-4 m-4">
+            <h1 className="text-xl font-bold">
+              Stay connected and up-to-date about ongoing tech events around the
+              globe.
+            </h1>
+            <br />
             <Link
-              href={link.slug}
-              key={index}
-              className="hover:bg-sky-100 p-4"
-              onClick={() => setResources(false)}
+              href={`/services`}
+              className="flex items-center gap-2 text-sm text-blue-800 hover:underline"
             >
-              {link.name}
+              Customer Stories <FaLongArrowAltRight />
             </Link>
-          ))}
+          </div>
+          <div className="grid grid-cols-2 w-full gap-8">
+            {resourcesLinks.map((link, index) => (
+              <Link
+                href={link.slug}
+                key={index}
+                className="hover:bg-gray-200 rounded duration-200 ease-in-out p-4"
+                onClick={() => setServices(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
         </div>
       )}
 
@@ -246,8 +293,6 @@ const Navbar = () => {
           />
         </Link>
         <div className="flex items-center gap-2">
-          <LuUser className="text-2xl" />
-          <BsCart className="text-2xl" />
           <button onClick={() => setToggleMenu(true)}>
             <IoMenuOutline className="text-3xl" />
           </button>
